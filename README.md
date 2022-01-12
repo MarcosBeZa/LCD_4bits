@@ -19,4 +19,9 @@ INFO:
  * https://www.youtube.com/channel/UCaW-5pa18N2Yxjkc4ejOPdQ
  * LCD library header file
 
+See a image example of my library working:
 ![image](https://user-images.githubusercontent.com/95104476/149237172-36c841d2-8fe2-4e08-bfb1-93aac3487b82.png)
+
+Here is a image using Proteus to simulate the library:
+![image](https://user-images.githubusercontent.com/95104476/149237374-a978b4d7-fe87-402f-ba7a-16bfbecbc803.png)
+
