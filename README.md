@@ -1,4 +1,4 @@
-# LCD_4bits
+# LCD_4bits XC8
 Library for 16x2 LCD control (HD44780U) model LM016L.
 
 INFO:
