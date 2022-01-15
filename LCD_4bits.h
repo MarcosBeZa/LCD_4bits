@@ -47,12 +47,12 @@
  *          D6  ------------  RB6
  *          D7  ------------  RB7
  *   
- * For the library to work well, it's necessary to include these two functions
+ * For the library to work well, it's necessary to include these three functions
  * in the main code.
  * 
  * void delay_5ms_LCD(void) { __delay_ms(5); }
  * void delay_2ms_LCD(void) { __delay_ms(2); }
- * void delay_40us_LCD(void) { __delay_ms(5); }
+ * void delay_40us_LCD(void) { __delay_us(40); }
  */
 
 
@@ -171,7 +171,7 @@ void delay_2ms_LCD(void) {
     __delay_ms(2); 
 }
 void delay_40us_LCD(void) { 
-    __delay_ms(5); 
+    __delay_us(40); 
 } 
  
  */
