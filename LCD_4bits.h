@@ -125,14 +125,11 @@ extern void delay_40us_LCD(void);
 #endif	/* LCD_4BITS_H */
 
 /*You can probe the next code for PIC16F887:
-
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config LVP = OFF
 #pragma config FCMEN = OFF
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <xc.h>
 #include "LCD_4bits.h"
 #define _XTAL_FREQ 16000000
@@ -142,24 +139,31 @@ void delay_5ms_LCD(void);
 void delay_2ms_LCD(void);
 void delay_40us_LCD(void);
 
-int main(int argc, char** argv) {
+void main(int argc, char** argv) {
     setup();
     Lcd_Init();
     Lcd_Cmd(LCD_CLEAR);
     Lcd_SetCursor(1,1);
-    Lcd_String_Cp("Mi gran libreria");
+    Lcd_String_Cp("Hello my friends");
     Lcd_SetCursor(2,1);
-    Lcd_String_Cp("Estoy funcionando ");
+    Lcd_String_Cp("Libreria LCD 16x2");
     __delay_ms(1000);
     
-    while(1)    {}
-    return (EXIT_SUCCESS);
+    while(1)    {
+        PORTBbits.RB0 = 1;
+        PORTBbits.RB1 = 1;
+        __delay_ms(500);
+        PORTBbits.RB0 = 0;
+        PORTBbits.RB1 = 0;
+        __delay_ms(500);
+        
+    }
+    return;
 }
 
 void setup()    {
     OSCCONbits.SCS = 0;            //Clock source defined by FOSC<2:0> of the CONFIG1 register
-    ANSELH = 0x00;
-    ANSEL = 0x00;
+    ANSELH = 0x00;                 
     TRISB = 0xFC;
     PORTB = 0x00;
 } 
@@ -172,6 +176,6 @@ void delay_2ms_LCD(void) {
 }
 void delay_40us_LCD(void) { 
     __delay_us(40); 
-} 
- 
+}
+
  */
